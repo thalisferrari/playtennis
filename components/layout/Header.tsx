@@ -18,32 +18,12 @@ export default function Header() {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // iOS-safe scroll lock: position:fixed preserves scroll position
-      // without triggering layout recalculation like overflow:hidden does
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
+      document.documentElement.style.overflow = "";
     }
     return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
+      document.documentElement.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -124,20 +104,6 @@ export default function Header() {
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center gap-2 mb-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${BASE_PATH}/images/logo.png`}
-              alt=""
-              width={36}
-              height={36}
-              className="w-9 h-9"
-            />
-            <span className="text-xl font-sans font-bold tracking-tight text-text-primary">
-              Play<span className="gradient-text-neon">Tennis</span>
-            </span>
-          </div>
-
           <ul className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <li key={link.href}>
