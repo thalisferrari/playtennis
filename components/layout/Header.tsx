@@ -92,8 +92,8 @@ export default function Header() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-72 md:hidden flex flex-col pt-20 px-6 bg-bg-primary/95 backdrop-blur-xl border-l border-white/10"
+              transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-0 right-0 h-full w-72 md:hidden flex flex-col pt-20 px-6 bg-bg-primary border-l border-white/10 will-change-transform"
             >
               <ul className="flex flex-col gap-6">
                 {navLinks.map((link) => (
