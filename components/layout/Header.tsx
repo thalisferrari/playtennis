@@ -18,12 +18,32 @@ export default function Header() {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      // iOS-safe scroll lock: position:fixed preserves scroll position
+      // without triggering layout recalculation like overflow:hidden does
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
     } else {
-      document.body.style.overflow = "";
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
     return () => {
-      document.body.style.overflow = "";
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     };
   }, [isMobileMenuOpen]);
 
@@ -85,14 +105,14 @@ export default function Header() {
 
       {/* Mobile drawer — outside header to avoid glass-strong stacking context issues on iOS */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-visibility ${
-          isMobileMenuOpen ? "visible" : "invisible delay-300"
+        className={`fixed inset-0 z-50 md:hidden ${
+          isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
         aria-hidden={!isMobileMenuOpen}
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-black/70 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black/70 transition-opacity duration-300 will-change-[opacity] ${
             isMobileMenuOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setIsMobileMenuOpen(false)}
