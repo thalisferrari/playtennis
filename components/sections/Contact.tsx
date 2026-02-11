@@ -43,7 +43,7 @@ export default function Contact() {
     >
       {/* Background orbs */}
       <GradientOrb color="blue" size={300} className="top-10 left-[-5%] opacity-20" animationDuration={12} />
-      <GradientOrb color="green" size={250} className="bottom-10 right-[-5%] opacity-15" animationDuration={10} />
+      <GradientOrb color="accent" size={250} className="bottom-10 right-[-5%] opacity-15" animationDuration={10} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section title */}
@@ -174,7 +174,7 @@ export default function Contact() {
 
               {/* Submit */}
               <div className="pt-2">
-                <NeonButton variant="filled" color="green" type="submit" className="w-full sm:w-auto">
+                <NeonButton variant="filled" color="accent" type="submit" className="w-full sm:w-auto">
                   <Send size={16} />
                   Enviar
                 </NeonButton>

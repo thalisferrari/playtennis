@@ -1,7 +1,7 @@
 "use client";
 
 import { Instagram, Facebook, Youtube, Linkedin, Phone, MessageCircle } from "lucide-react";
-import { footerColumns, socialLinks, companyInfo } from "@/data/site-data";
+import { footerColumns, socialLinks, companyInfo, BASE_PATH } from "@/data/site-data";
 
 const socialIconMap: Record<string, React.ElementType> = {
   instagram: Instagram,
@@ -20,8 +20,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="flex flex-col gap-4">
-            <a href="#inicio" className="text-xl font-sans font-bold tracking-tight text-text-primary">
-              Play<span className="gradient-text-neon">Tennis</span>
+            <a href="#inicio" className="flex items-center gap-2 text-xl font-sans font-bold tracking-tight text-text-primary">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${BASE_PATH}/images/logo.png`}
+                alt=""
+                width={36}
+                height={36}
+                className="w-9 h-9"
+              />
+              <span>Play<span className="gradient-text-neon">Tennis</span></span>
             </a>
             <p className="text-sm text-text-secondary leading-relaxed">
               {companyInfo.tagline}
@@ -81,7 +89,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
-          className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-green to-emerald-500 flex items-center justify-center text-bg-primary shadow-lg hover:glow-green-intense hover:scale-110 transition-all duration-300 animate-pulse"
+          className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-accent to-blue-500 flex items-center justify-center text-bg-primary shadow-lg hover:glow-accent-intense hover:scale-110 transition-all duration-300 animate-pulse"
         >
           <MessageCircle size={22} />
         </a>

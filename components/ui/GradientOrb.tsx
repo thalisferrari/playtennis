@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 interface GradientOrbProps {
-  color: "blue" | "green" | "mixed";
+  color: "blue" | "accent" | "mixed";
   size?: number;
   className?: string;
   animationDuration?: number;
@@ -11,8 +11,8 @@ interface GradientOrbProps {
 
 const colorMap = {
   blue: "from-neon-blue/30 to-cyan-500/10",
-  green: "from-neon-green/30 to-emerald-500/10",
-  mixed: "from-neon-blue/20 via-purple-500/15 to-neon-green/20",
+  accent: "from-neon-accent/30 to-blue-500/10",
+  mixed: "from-neon-blue/20 via-blue-400/15 to-neon-accent/20",
 };
 
 export default function GradientOrb({

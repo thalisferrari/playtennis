@@ -18,7 +18,7 @@ const intensityMap: Record<GlassIntensity, string> = {
 
 const glowHoverMap: Record<GlowColor, string> = {
   blue: "hover:border-neon-blue/40 hover:glow-blue",
-  green: "hover:border-neon-green/40 hover:glow-green",
+  accent: "hover:border-neon-accent/40 hover:glow-accent",
 };
 
 export default function GlassCard({

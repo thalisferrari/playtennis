@@ -52,7 +52,7 @@ export interface ContactFormData {
   message: string;
 }
 
-export type GlowColor = "blue" | "green";
+export type GlowColor = "blue" | "accent";
 export type GlassIntensity = "light" | "medium" | "strong";
 export type ButtonVariant = "filled" | "outlined";
 export type AnimationType = "fadeIn" | "slideUp" | "slideLeft" | "slideRight";

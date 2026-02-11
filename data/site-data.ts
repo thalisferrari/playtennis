@@ -1,5 +1,7 @@
 import type { Unit, Product, EventItem, NavLink, FooterColumn, SocialLink } from "@/types";
 
+export const BASE_PATH = process.env.NODE_ENV === "production" ? "/playtennis" : "/playtennis";
+
 export const navLinks: NavLink[] = [
   { label: "Início", href: "#inicio" },
   { label: "Unidades", href: "#unidades" },

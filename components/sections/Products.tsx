@@ -44,12 +44,12 @@ export default function Products() {
                 delay={index * 0.2}
               >
                 <GlassCard
-                  hoverGlow="green"
+                  hoverGlow="accent"
                   className="p-8 h-full flex flex-col items-center text-center group"
                 >
                   {/* Icon */}
                   <motion.div
-                    className="w-16 h-16 rounded-2xl bg-neon-blue/10 flex items-center justify-center text-neon-blue mb-6 group-hover:bg-neon-green/10 group-hover:text-neon-green transition-colors duration-300"
+                    className="w-16 h-16 rounded-2xl bg-neon-blue/10 flex items-center justify-center text-neon-blue mb-6 group-hover:bg-neon-accent/10 group-hover:text-neon-accent transition-colors duration-300"
                     whileHover={prefersReducedMotion ? {} : { rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   >
@@ -67,7 +67,7 @@ export default function Products() {
                   {/* Link */}
                   <a
                     href={product.url}
-                    className="inline-flex items-center gap-2 text-sm text-neon-blue hover:text-neon-green transition-colors duration-300 group/link"
+                    className="inline-flex items-center gap-2 text-sm text-neon-blue hover:text-neon-accent transition-colors duration-300 group/link"
                   >
                     Saiba mais
                     <ArrowRight

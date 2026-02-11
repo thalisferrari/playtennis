@@ -15,7 +15,7 @@ export default function Units() {
         {/* Section title */}
         <AnimatedSection animation="slideUp" className="mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-1 h-8 rounded-full bg-gradient-to-b from-neon-blue to-neon-green" aria-hidden="true" />
+            <div className="w-1 h-8 rounded-full bg-gradient-to-b from-neon-blue to-neon-accent" aria-hidden="true" />
             <h2 className="text-3xl sm:text-4xl font-sans font-bold text-text-primary">
               Jogue Agora
             </h2>

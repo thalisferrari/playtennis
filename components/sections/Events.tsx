@@ -46,7 +46,7 @@ export default function Events() {
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
-                      backgroundImage: `radial-gradient(circle at ${index === 0 ? "30% 70%" : "70% 30%"}, ${index === 0 ? "rgba(0,212,255,0.3)" : "rgba(0,255,136,0.3)"}, transparent 50%)`,
+                      backgroundImage: `radial-gradient(circle at ${index === 0 ? "30% 70%" : "70% 30%"}, ${index === 0 ? "rgba(0,212,255,0.3)" : "rgba(0,119,255,0.3)"}, transparent 50%)`,
                     }}
                     aria-hidden="true"
                   />
@@ -58,7 +58,7 @@ export default function Events() {
                   <div className="relative z-10 glass rounded-2xl p-8 max-w-sm group-hover:glow-blue transition-all duration-500">
                     <Icon
                       size={36}
-                      className={`mx-auto mb-4 ${index === 0 ? "text-neon-blue" : "text-neon-green"}`}
+                      className={`mx-auto mb-4 ${index === 0 ? "text-neon-blue" : "text-neon-accent"}`}
                     />
                     <h3 className="text-2xl font-sans font-bold text-text-primary mb-3">
                       {event.title}
@@ -68,7 +68,7 @@ export default function Events() {
                     </p>
                     <NeonButton
                       variant="outlined"
-                      color={index === 0 ? "blue" : "green"}
+                      color={index === 0 ? "blue" : "accent"}
                       href={event.url}
                     >
                       Saiba Mais

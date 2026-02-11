@@ -16,7 +16,7 @@ interface NeonButtonProps {
 export default function NeonButton({
   children,
   variant = "filled",
-  color = "green",
+  color = "accent",
   href,
   onClick,
   className = "",
@@ -28,11 +28,11 @@ export default function NeonButton({
 
   const variantStyles =
     variant === "filled"
-      ? color === "green"
-        ? "bg-gradient-to-r from-neon-green to-emerald-400 text-bg-primary hover:glow-green-intense"
+      ? color === "accent"
+        ? "bg-gradient-to-r from-neon-accent to-blue-400 text-bg-primary hover:glow-accent-intense"
         : "bg-gradient-to-r from-neon-blue to-cyan-400 text-bg-primary hover:glow-blue-intense"
-      : color === "green"
-        ? "border border-neon-green/60 text-neon-green hover:bg-neon-green/10 hover:glow-green"
+      : color === "accent"
+        ? "border border-neon-accent/60 text-neon-accent hover:bg-neon-accent/10 hover:glow-accent"
         : "border border-neon-blue/60 text-neon-blue hover:bg-neon-blue/10 hover:glow-blue";
 
   const combinedStyles = `${baseStyles} ${variantStyles} ${className}`;

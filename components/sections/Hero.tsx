@@ -40,14 +40,14 @@ export default function Hero() {
         className="absolute inset-0 opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,212,255,0.15), transparent), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,255,136,0.1), transparent)",
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,212,255,0.15), transparent), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,119,255,0.1), transparent)",
         }}
         aria-hidden="true"
       />
 
       {/* Animated gradient orbs */}
       <GradientOrb color="blue" size={500} className="top-[-10%] left-[-10%] opacity-40" animationDuration={10} />
-      <GradientOrb color="green" size={350} className="bottom-[-5%] right-[-5%] opacity-30" animationDuration={12} />
+      <GradientOrb color="accent" size={350} className="bottom-[-5%] right-[-5%] opacity-30" animationDuration={12} />
       <GradientOrb color="mixed" size={300} className="top-[30%] right-[20%] opacity-20" animationDuration={8} />
 
       {/* Content */}
@@ -81,7 +81,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={childVariants}>
-          <NeonButton variant="filled" color="green" href="#unidades">
+          <NeonButton variant="filled" color="accent" href="#unidades">
             Jogue Agora
           </NeonButton>
         </motion.div>
