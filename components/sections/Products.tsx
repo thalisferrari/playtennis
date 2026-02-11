@@ -18,7 +18,7 @@ export default function Products() {
   return (
     <section
       id="produtos"
-      className="relative py-20 lg:py-28 bg-bg-primary"
+      className="relative py-20 lg:py-28 bg-bg-primary overflow-hidden"
       aria-label="Nossos produtos"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

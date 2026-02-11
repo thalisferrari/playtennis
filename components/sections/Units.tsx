@@ -8,7 +8,7 @@ export default function Units() {
   return (
     <section
       id="unidades"
-      className="relative py-20 lg:py-28 bg-bg-secondary"
+      className="relative py-20 lg:py-28 bg-bg-secondary overflow-hidden"
       aria-label="Nossas unidades"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

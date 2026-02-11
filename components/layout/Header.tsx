@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/site-data";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +29,8 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <motion.header
-      initial={prefersReducedMotion ? {} : { y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top)] animate-header-slide-in transition-all duration-500 ${
         isScrolled
           ? "glass-strong shadow-lg shadow-black/20"
           : "bg-transparent"
@@ -116,6 +112,6 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

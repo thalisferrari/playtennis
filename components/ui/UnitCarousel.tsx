@@ -35,10 +35,9 @@ export default function UnitCarousel({ units }: UnitCarouselProps) {
   }, []);
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0 },
     visible: (i: number) => ({
       opacity: 1,
-      y: 0,
       transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
     }),
   };
@@ -69,7 +68,7 @@ export default function UnitCarousel({ units }: UnitCarouselProps) {
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-6 overflow-x-auto pb-4 custom-scrollbar snap-x snap-mandatory scroll-smooth"
+        className="flex gap-6 overflow-x-auto pb-4 custom-scrollbar snap-x snap-mandatory scroll-smooth overflow-y-hidden"
         role="region"
         aria-label="Carrossel de unidades"
       >
@@ -83,7 +82,10 @@ export default function UnitCarousel({ units }: UnitCarouselProps) {
             variants={itemVariants}
             className="flex-shrink-0 w-[300px] snap-start"
           >
-            <GlassCard hoverGlow="blue" className="h-full overflow-hidden group">
+            <GlassCard
+              hoverGlow="blue"
+              className="h-full overflow-hidden group"
+            >
               {/* Image placeholder */}
               <div className="relative h-44 bg-gradient-to-br from-bg-secondary to-bg-primary overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 to-transparent z-10" />

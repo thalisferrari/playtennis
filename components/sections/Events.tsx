@@ -14,7 +14,7 @@ export default function Events() {
   return (
     <section
       id="eventos"
-      className="relative py-20 lg:py-28 bg-bg-secondary"
+      className="relative py-20 lg:py-28 bg-bg-secondary overflow-hidden"
       aria-label="Eventos e torneios"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ export default function Events() {
                 key={event.id}
                 animation={index === 0 ? "slideLeft" : "slideRight"}
               >
-                <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden group cursor-pointer">
+                <div className="relative h-full min-h-72 sm:min-h-80 rounded-2xl overflow-hidden group cursor-pointer flex flex-col items-center justify-center p-8 text-center">
                   {/* Background gradient placeholder */}
                   <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary" />
 
@@ -54,27 +54,25 @@ export default function Events() {
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
 
-                  {/* Content overlay */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
-                    <div className="glass rounded-2xl p-8 max-w-sm group-hover:glow-blue transition-all duration-500">
-                      <Icon
-                        size={36}
-                        className={`mx-auto mb-4 ${index === 0 ? "text-neon-blue" : "text-neon-green"}`}
-                      />
-                      <h3 className="text-2xl font-sans font-bold text-text-primary mb-3">
-                        {event.title}
-                      </h3>
-                      <p className="text-text-secondary text-sm mb-6">
-                        {event.description}
-                      </p>
-                      <NeonButton
-                        variant="outlined"
-                        color={index === 0 ? "blue" : "green"}
-                        href={event.url}
-                      >
-                        Saiba Mais
-                      </NeonButton>
-                    </div>
+                  {/* Content */}
+                  <div className="relative z-10 glass rounded-2xl p-8 max-w-sm group-hover:glow-blue transition-all duration-500">
+                    <Icon
+                      size={36}
+                      className={`mx-auto mb-4 ${index === 0 ? "text-neon-blue" : "text-neon-green"}`}
+                    />
+                    <h3 className="text-2xl font-sans font-bold text-text-primary mb-3">
+                      {event.title}
+                    </h3>
+                    <p className="text-text-secondary text-sm mb-6">
+                      {event.description}
+                    </p>
+                    <NeonButton
+                      variant="outlined"
+                      color={index === 0 ? "blue" : "green"}
+                      href={event.url}
+                    >
+                      Saiba Mais
+                    </NeonButton>
                   </div>
                 </div>
               </AnimatedSection>
